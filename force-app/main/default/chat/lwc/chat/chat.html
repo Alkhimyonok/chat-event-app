@@ -1,0 +1,15 @@
+<template>
+    <lightning-card icon-name="utility:chat"
+                    title="Chat"
+    >
+        <section class="history">
+            <c-message-history messages={messages}
+            ></c-message-history>
+        </section>
+
+        <section class="message-input">
+            <c-message-input onsend={handleSend}
+            ></c-message-input>
+        </section>
+    </lightning-card>
+</template>
