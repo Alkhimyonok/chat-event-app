@@ -5,7 +5,7 @@ export default class MessageHistory extends LightningElement {
      *
      * @type MessageWrapper[]
      */
-    @api _messages;
+    _messages;
 
     @api
     set messages(messages) {
@@ -21,6 +21,10 @@ export default class MessageHistory extends LightningElement {
     }
 
     renderedCallback() {
+        this.placeScrollBottom();
+    }
+
+    placeScrollBottom(){
         const scrollArea = this.template.querySelector('.slds-scrollable_y');
         scrollArea.scrollTop = scrollArea.scrollHeight;
     }

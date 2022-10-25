@@ -1,4 +1,3 @@
-//todo:: const labels in html
 import {api, LightningElement} from 'lwc';
 
 import {MessageWrapper, MessageWrapperBuilder} from "./messageWrapper";

@@ -1,25 +1,23 @@
-//todo:: const labels in html
 import {LightningElement} from 'lwc';
 
-const SEND_EVENT = 'send';
-const ENTER_KEY = 'Enter';
+const SEND_EVENT_NAME = 'send';
+const ENTER_KEY_NAME = 'Enter';
+const INPUT_MESSAGE_SELECTOR = '.input-message';
 
 export default class MessageInput extends LightningElement {
 
     messageBody = '';
 
     handleSendMessage() {
-        this.dispatchEvent(new CustomEvent(SEND_EVENT, {'detail': this.messageBody}));
-        this.messageBody = '';
-    }
+        const inputMessageElement = this.template.querySelector(INPUT_MESSAGE_SELECTOR);
+        const messageBody = inputMessageElement.value;
 
-    handleChangeMessage(event) {
-        this.messageBody = event.target.value;
+        this.dispatchEvent(new CustomEvent(SEND_EVENT_NAME, {'detail': messageBody}));
+        inputMessageElement.value = '';
     }
 
     handleKeyPress(event) {
-        if (event.key === ENTER_KEY) {
-            this.handleChangeMessage(event);
+        if (event.key === ENTER_KEY_NAME) {
             this.handleSendMessage();
         }
     };
