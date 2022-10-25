@@ -1,0 +1,21 @@
+<template>
+    <lightning-layout vertical-align="center" horizontal-align="spread">
+        <lightning-layout-item flexibility="auto" padding="around-small" size="11">
+            <lightning-input value={messageBody}
+                             class="input-message"
+                             type="text"
+                             placeholder="type a message here..."
+                             onkeypress={handleKeyPress}
+            ></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item  class="input-button_item" flexibility="auto" size="1">
+            <lightning-button-icon icon-name="utility:send"
+                                   variant="bare"
+                                   size="large"
+                                   title="Send Message"
+                                   alternative-text="Send Message"
+                                   onclick={handleSendMessage}
+            ></lightning-button-icon>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

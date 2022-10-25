@@ -1,0 +1,28 @@
+<template>
+    <lightning-layout vertical-align="center" horizontal-align="spread">
+        <lightning-layout-item class="user-icon" flexibility="auto" size="1">
+            <lightning-icon icon-name="utility:user"
+                            size="small"
+                            title="User Icon"
+                            alternative-text="User Icon"
+            ></lightning-icon>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto" size="11">
+            <div class="message-details truncate">
+                <p>
+                    <span class="user-alias">{message.userAlias} </span>
+                    <lightning-formatted-date-time value={message.createdDate}
+                                                   class="date-time"
+                                                   year="numeric"
+                                                   month="2-digit"
+                                                   day="numeric"
+                                                   hour="2-digit"
+                                                   minute="2-digit"
+                    ></lightning-formatted-date-time>
+                </p>
+                <lightning-formatted-text value={message.body}
+                ></lightning-formatted-text>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>
